@@ -8,9 +8,14 @@
 </template>
 
 <script>
+
     import HelloWorld from './components/HelloWorld.vue'
     import SuppliersList from './components/SuppliersList.vue'
     import SuppliersMap from './components/SuppliersMap.vue'
+    import Vue from 'vue'
+    import VueRouter from 'vue-router'
+    Vue.use(VueRouter);
+
 
 
     export default {
