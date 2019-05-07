@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Carte des fournisseurs</h1>
+    <div class="mt-4">
+        <h1> Map des fournisseurs </h1>
     </div>
 </template>
 
