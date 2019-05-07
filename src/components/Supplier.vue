@@ -26,13 +26,11 @@
 <script>
     export default {
         name: 'Supplier',
-        data() {
-            return {
-                name: 'Fournisseur 92I',
-                status: true, // est ce qu'il y a du stock
-                checkedAt: new Date().toLocaleString() // date de la dernière mise à jour du stock
-            }
-        }
+        props: {
+            name: String,
+            status: Boolean,
+            checkedAt: String,
+        },
     }
 
 </script>
@@ -42,7 +40,7 @@
 <style scoped>
 
     hr {
-        width: 55%;
+        width: 70%;
         border-width: 3px;
         border-color: #35495E;
     }

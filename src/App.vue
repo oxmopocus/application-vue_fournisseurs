@@ -20,14 +20,7 @@
                <strong>Afficher la map</strong>
             </button>
         </router-link>
-
-        <router-link to="/supplier">
-            <button type="button" class="btn ml-3 mt-4">
-               <strong>Détail fournisseur</strong>
-            </button>
-        </router-link>
-
-        <router-view></router-view>
+                <router-view></router-view>
     </div>
 </template>
 
