@@ -4,13 +4,12 @@
         <div v-for="element in suppliers" v-bind:key="element.id">
             <supplier v-bind:name="element.name" v-bind:status="element.status" v-bind:checkedAt="element.checkedAt">
             </supplier>
-    </div>
+        </div>
     </div>
 </template>
-
 <script>
     import Supplier from "./Supplier";
-    import { format } from 'timeago.js';
+   // import {format} from 'timeago.js';
 
     export default {
         name: "SupplierList",
@@ -24,23 +23,19 @@
                         id: 1,
                         name: "Fournisseur 1",
                         status: true,
-                        checkedAt: format('2019-05-07') // new Date().toLocaleString('fr-FR', {timeZone:'UTC'})
+                        checkedAt: new Date().toLocaleString('fr-FR', {timeZone:'UTC'}) // format('2019-05-07')
                     },
                     {
                         id: 2,
                         name: "Fournisseur 2",
                         status: false,
-                        checkedAt: format('2019-05-07') // new Date().toLocaleString('fr-FR', {timeZone:'UTC'})
+                        checkedAt: new Date().toLocaleString('fr-FR', {timeZone:'UTC'}) // format('2019-05-07')
                     }
                 ]
             }
         }
     }
-
-
 </script>
-
-
 <style scoped>
 
 </style>
