@@ -23,3 +23,10 @@ new Vue({
     router,
     render: h => h(App),
 }).$mount('#app');
+
+import * as VueGoogleMaps from 'vue2-google-maps'
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyAG7lTkCP8wsowucSS_YzzEy4PS4HnNejo',
+    }
+});

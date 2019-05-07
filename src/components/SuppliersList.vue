@@ -10,7 +10,7 @@
 
 <script>
     import Supplier from "./Supplier";
-    import { format, render, cancel, register } from 'timeago.js';
+    import { format } from 'timeago.js';
 
     export default {
         name: "SupplierList",
