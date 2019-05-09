@@ -2,8 +2,7 @@
     <div class="mt-4">
         <h1>Liste des fournisseurs</h1>
         <div v-for="element in suppliers" v-bind:key="element.id">
-            <supplier v-bind:name="element.name" v-bind:status="element.status" v-bind:checkedAt="element.checkedAt">
-            </supplier>
+            <supplier v-bind:name="element.name" v-bind:status="element.status" v-bind:checkedAt="element.checkedAt"/>
         </div>
     </div>
 </template>
