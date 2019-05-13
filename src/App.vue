@@ -9,6 +9,7 @@
          <SuppliersMap></SuppliersMap>
          <router-view></router-view>
          -->
+
         <router-link to="/suppliers">
             <button type="button" class="btn mr-2 mt-4">
                 <strong>Afficher la liste</strong>
@@ -17,10 +18,20 @@
 
         <router-link to="/map">
             <button type="button" class="btn ml-2 mt-4">
-               <strong>Afficher la map</strong>
+                <strong>Afficher la map</strong>
             </button>
         </router-link>
-                <router-view></router-view>
+
+        <div class="form-group col-md-1">
+            <label for="inputState">Statut</label>
+            <select id="inputState" class="form-control">
+                <option>OK</option>
+                <option>KO</option>
+                <option>ALL</option>
+            </select>
+        </div>
+
+        <router-view></router-view>
     </div>
 </template>
 
@@ -77,10 +88,18 @@
 
     .btn:hover {
         color: #35495E;
-        border-color : #35495E;
+        border-color: #35495E;
     }
 
+    .custom-select {
+        color: #41B883;
+        border-color: #41B883;
+    }
 
+    .custom-select:hover {
+        color: #35495E;
+        border-color: #35495E;
+    }
 
 </style>
 

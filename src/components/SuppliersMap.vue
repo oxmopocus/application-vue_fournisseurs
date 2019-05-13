@@ -1,52 +1,51 @@
 <template>
     <div class="mt-4 mb-4 container">
         <h1> Map des fournisseurs </h1>
-        <gmap-map
-                :center="{lat:46, lng:2}"
-                :zoom="6"
+        <GmapMap
+                :center="geoloc"
+                :zoom="9"
                 style="width: 100%; height: 700px"
         >
             <GmapMarker
                     :key="id"
                     v-for="(m, id) in suppliers"
-                    :position='({lat:m.latitude, lng:m.longitude})'
+                    :position="({lng: parseFloat(m.longitude), lat: parseFloat(m.latitude)})"
                     :clickable="true"
                     :draggable="true"
                     @click="center=m.position"
             />
-
-        </gmap-map>
-
+        </GmapMap>
     </div>
-
-
 </template>
 
 <script>
+    const axios = require('axios');
     export default {
         name: "SuppliersMap.vue",
-
         data() {
             return {
-                suppliers: [
-                    {
-                        id: 1,
-                        latitude: 44.93333,
-                        longitude: 4.9
-                    },
-                    {
-                        id: 2,
-                        latitude:  45.764,
-                        longitude: 4.8357
-                    }
-                ]
+                suppliers: [],
+                loading: false,
+                error: null,
+                geoloc: {lat: null, lng: null}
+            }
+        },
+        created() {
+            axios
+                .get('https://api-suppliers.herokuapp.com/api/suppliers')
+                .then(response => (this.suppliers = response.data))
+        },
+        mounted() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    // console.log(position);
+                    this.geoloc = {lat: position.coords.latitude, lng: position.coords.longitude};
+                });
             }
         }
     }
 
-
 </script>
-
 
 <style scoped>
 
