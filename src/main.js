@@ -17,7 +17,7 @@ const router = new VueRouter({
     routes
 });
 
-Vue.config.productionTip = false;
+//Vue.config.productionTip = false;
 
 // bien charger l'import avant ma vue sinon il n'accède pas à la map !!!!!!!!
 

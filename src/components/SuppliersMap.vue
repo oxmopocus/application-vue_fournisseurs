@@ -1,6 +1,6 @@
 <template>
     <div class="mt-4 mb-4 container">
-        <h1> Map des fournisseurs </h1>
+        <h1 class="mb-4"> Map des fournisseurs </h1>
         <GmapMap
                 :center="geoloc"
                 :zoom="9"
@@ -14,6 +14,7 @@
                     :draggable="true"
                     @click="center=m.position"
             />
+
         </GmapMap>
     </div>
 </template>
@@ -38,7 +39,7 @@
         mounted() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(position => {
-                    // console.log(position);
+                    // console.log(position);0
                     this.geoloc = {lat: position.coords.latitude, lng: position.coords.longitude};
                 });
             }

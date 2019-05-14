@@ -11,25 +11,18 @@
          -->
 
         <router-link to="/suppliers">
-            <button type="button" class="btn mr-2 mt-4">
+            <button type="button" class="btn col-md-2 mr-2 mt-4">
                 <strong>Afficher la liste</strong>
             </button>
         </router-link>
 
         <router-link to="/map">
-            <button type="button" class="btn ml-2 mt-4">
+            <button type="button" class="btn col-md-2 ml-2 mt-4">
                 <strong>Afficher la map</strong>
             </button>
         </router-link>
 
-        <div class="form-group col-md-1">
-            <label for="inputState">Statut</label>
-            <select id="inputState" class="form-control">
-                <option>OK</option>
-                <option>KO</option>
-                <option>ALL</option>
-            </select>
-        </div>
+
 
         <router-view></router-view>
     </div>
@@ -40,8 +33,25 @@
     import SuppliersList from './components/SuppliersList.vue'
     import SuppliersMap from './components/SuppliersMap.vue'
     import Supplier from './components/Supplier.vue'
+    const axios = require('axios');
 
     export default {
+
+        data() {
+            return{
+                selected: {
+                    suppliers: [],
+                    selected:"",
+                },
+                selecteds:['OK', 'KO', 'ALL']
+            }
+        },
+        created() {
+            axios
+                .get('https://api-suppliers.herokuapp.com/api/suppliers')
+                .then(response => (this.selected = response))
+        },
+
         name: 'app',
         components: {
             HelloWorld,
@@ -57,9 +67,10 @@
 
             onSuppliersListClick: function () {
                 alert('Affiche liste')
-            },
+            }
         }
     }
+
 </script>
 
 <style>
