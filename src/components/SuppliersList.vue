@@ -37,7 +37,7 @@
                 error: null,
                 selected:'OK',
                 availableSelected:[true, false, 'ALL']
-            }  
+            }
         },
 
         created() {

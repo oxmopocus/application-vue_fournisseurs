@@ -22,6 +22,8 @@ const router = new VueRouter({
 // bien charger l'import avant ma vue sinon il n'accède pas à la map !!!!!!!!
 
 import * as VueGoogleMaps from 'vue2-google-maps'
+
+import './registerServiceWorker'
 Vue.use(VueGoogleMaps, {
     load: {
         key: 'AIzaSyAG7lTkCP8wsowucSS_YzzEy4PS4HnNejo',
