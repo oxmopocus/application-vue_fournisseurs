@@ -3,27 +3,27 @@
 
         <router-link to="/suppliers">
             <select v-model="selected" class="custom-select col-md-1">
-                       <option v-for="option in availableSelected" v-bind:value="option">{{ option }}</option>
+                <option v-for="option in availableSelected" v-bind:value="option">{{ option }}</option>
             </select>
         </router-link>
 
-       <!-- <p>Selected: {{ selected }}</p> -->
+        <!-- <p>Selected: {{ selected }}</p> -->
 
         <h1>Liste des fournisseurs</h1>
 
         <div v-for="element in listFilter()" v-bind:key="element.id">
-            <supplier v-bind:name="element.name" v-bind:status="element.status" v-bind:checkedAt="element.checkedAt"/>
+            <supplier v-bind:name="element.name" v-bind:status="element.status"
+                      v-bind:checkedAt="element.checkedAt"/>
         </div>
+
 
     </div>
 </template>
+
 <script>
     import Supplier from "./Supplier";
     // import {format} from 'timeago.js';
     const axios = require('axios');
-
-
-
     export default {
         name: "SupplierList",
         components: {
@@ -35,8 +35,8 @@
                 suppliers: [],
                 loading: false,
                 error: null,
-                selected:'OK',
-                availableSelected:[true, false, 'ALL']
+                selected: 'OK',
+                availableSelected: [true, false, 'ALL']
             }
         },
 
@@ -54,8 +54,7 @@
                         return supplier;
                     } else if (this.selected === "ALL") {
                         return supplier;
-                    }
-                    else {
+                    } else {
                         return false
                     }
                 });

@@ -4,13 +4,15 @@ import App from './App.vue';
 import SuppliersList from "./components/SuppliersList";
 import SuppliersMap from "./components/SuppliersMap";
 import Supplier from "./components/Supplier";
+import addSupply from "./components/addSupply";
 
 Vue.use(VueRouter);
 
 const routes = [
     {path: '/suppliers', component: SuppliersList},
     {path: '/map', component: SuppliersMap},
-    {path: '/supplier', component: Supplier}
+    {path: '/supplier', component: Supplier},
+    {path: '/addSupply', component: addSupply}
 ];
 
 const router = new VueRouter({

@@ -22,7 +22,11 @@
             </button>
         </router-link>
 
-
+        <router-link to="/addSupply">
+            <button type="button" class="btn col-md-2 ml-3 mt-4">
+                <strong>Ajouter un fournisseur</strong>
+            </button>
+        </router-link>
 
         <router-view></router-view>
     </div>
@@ -33,6 +37,7 @@
     import SuppliersList from './components/SuppliersList.vue'
     import SuppliersMap from './components/SuppliersMap.vue'
     import Supplier from './components/Supplier.vue'
+
     const axios = require('axios');
 
     export default {
