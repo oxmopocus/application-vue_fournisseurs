@@ -55,6 +55,9 @@
             axios
                 .get('https://api-suppliers.herokuapp.com/api/suppliers')
                 .then(response => (this.selected = response))
+                .catch(function (error) {
+                    console.log(error);
+                })
         },
 
         name: 'app',

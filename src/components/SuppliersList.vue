@@ -15,8 +15,6 @@
             <supplier v-bind:name="element.name" v-bind:status="element.status"
                       v-bind:checkedAt="element.checkedAt"/>
         </div>
-
-
     </div>
 </template>
 
@@ -35,7 +33,7 @@
                 suppliers: [],
                 loading: false,
                 error: null,
-                selected: 'OK',
+                selected: true,
                 availableSelected: [true, false, 'ALL']
             }
         },
@@ -47,16 +45,16 @@
         },
 
         methods: {
+            /**
+             * Entrée : rien
+             * Sortie : un tableau de suppliers
+             */
             listFilter: function () {
                 return this.suppliers.filter(supplier => {
-                    // console.log(this.selected, supplier.status);
-                    if (supplier.status == this.selected) {
-                        return supplier;
-                    } else if (this.selected === "ALL") {
-                        return supplier;
-                    } else {
-                        return false
+                    if (this.selected === "ALL" || supplier.status === this.selected) {
+                        return true; // Affiche ce supplier
                     }
+                    return false; // n'affihe pas ce supplier.
                 });
             }
         }
