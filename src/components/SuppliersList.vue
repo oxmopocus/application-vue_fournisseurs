@@ -13,7 +13,7 @@
 
         <div v-for="element in listFilter()" v-bind:key="element.id">
             <supplier v-bind:name="element.name" v-bind:status="element.status"
-                      v-bind:checkedAt="element.checkedAt"/>
+                      v-bind:checkedAt="element.checkedAt" v-bind:id="element.id"/>
         </div>
     </div>
 </template>

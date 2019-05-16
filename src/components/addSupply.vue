@@ -61,7 +61,7 @@
                 });
                 event.preventDefault();
             }
-        }
+        },
     }
 </script>
 
